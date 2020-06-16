@@ -14,7 +14,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *curr = NULL, *tmp = *list, *head = (*list)->next;
 
-	if (!*list || !(*list)->next)
+	if (!*list || !list)
 		return;
 
 	while (head)
