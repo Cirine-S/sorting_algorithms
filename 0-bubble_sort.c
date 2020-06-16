@@ -2,7 +2,7 @@
 #include "sort.h"
 
 /**
- * bubble_sort
+ * bubble_sort - bubble sort function
  * @array: the array of int to sort
  * @size: length of the array
  * Return: void
