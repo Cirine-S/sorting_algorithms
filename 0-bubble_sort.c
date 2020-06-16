@@ -9,7 +9,7 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j, swapped = 0;
+	size_t i, j, permut, swapped = 0;
 
 	if (size < 2)
 		return;
@@ -18,26 +18,13 @@ void bubble_sort(int *array, size_t size)
 		for (j = 0; j < size - i - 1; j++)
 			if (array[j] > array[j + 1])
 			{
-				swap(&array[j], &array[j + 1]);
+				permut = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = permut;
 				print_array(array, size);
 				swapped = 1;
 			}
 		if (swapped == 0)
 			break;
 	}
-}
-
-/**
- *swap - swap function
- * @a: int
- * @b: int
- * return: void
- */
-void swap(int *a, int *b)
-{
-	int permut;
-
-	permut = *a;
-	*a = *b;
-	*b = permut;
 }
