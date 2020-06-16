@@ -38,5 +38,5 @@ void swap(int *a, int *b)
 
 	permut = *a;
 	*a = *b;
-        *b = permut;
+	*b = permut;
 }
