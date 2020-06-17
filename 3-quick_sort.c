@@ -2,6 +2,41 @@
 #include <stdlib.h>
 #include "sort.h"
 
+
+/**
+ * partition - function
+ * @a: array
+ * @low: 1st element
+ * @high: last element
+ * @size: size
+ * Return: index of swapped element
+ */
+int partition(int *a, int low, int high, size_t size)
+{
+	int i, j, swap, pivot = a[high];
+
+	i = low - 1;
+
+	for (j = low; j <= high - 1; j++)
+	{
+		if (a[j] < pivot)
+		{
+			i++;
+			swap = a[i];
+			a[i] = a[j];
+			a[j] = swap;
+			if (i != j)
+			print_array(a, size);
+		}
+	}
+	swap = a[i + 1];
+	a[i + 1] = a[high];
+	a[high] = swap;
+	if (high != (i + 1))
+		print_array(a, size);
+	return (i + 1);
+}
+
 /**
  * quick - function
  * @a: array
@@ -21,36 +56,6 @@ void quick(int *a, int low, int high, size_t size)
 		quick(a, low, pi - 1, size);
 		quick(a, pi + 1, high, size);
 	}
-}
-
-/**
- * partition - function
- * @a: array
- * @low: 1st element
- * @high: last element
- * Return: index of swapped element
- */
-int partition(int *a, int low, int high, size_t size)
-{
-	int i, j, swap, pivot = a[high];
-
-	i = low - 1;
-
-		for (j = low; j <= high- 1; j++)
-		{
-			if (a[j] < pivot)
-			{
-				i++;
-				swap = a[i];
-				a[i] = a[j];
-				a[j] = swap;
-				print_array(a, size);
-			}
-		}
-	swap = a[i + 1];
-	a[i + 1] = a[high];
-	a[high] = swap;
-	return (i + 1);
 }
 
 /**
