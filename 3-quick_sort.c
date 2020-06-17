@@ -6,11 +6,11 @@
  * quick - function
  * @a: array
  * @low: low
- * @hight: high
+ * @high: high
  * @size: length of array
  * Return: void
  */
-void quick(int a*, int low, int high, size_t size)
+void quick(int *a, int low, int high, size_t size)
 {
 	int pi;
 
@@ -30,7 +30,7 @@ void quick(int a*, int low, int high, size_t size)
  * @high: last element
  * Return: index of swapped element
  */
-int partition(int a*, int low, int high, size_t size)
+int partition(int *a, int low, int high, size_t size)
 {
 	int i, j, swap, pivot = a[high];
 
